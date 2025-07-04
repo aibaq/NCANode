@@ -10,5 +10,5 @@ import lombok.extern.jackson.Jacksonized;
 @Data
 @SuperBuilder
 public class TspCreateResponse extends StatusResponse {
-    private String xml;
+    private String token;
 }

@@ -33,7 +33,7 @@ private final TspService tspService;
         try {
             CMSSignedData tsp = tspService.create(raw, tspHashAlgorithm, useTsaPolicy).toCMSSignedData();
             String tspBase64 = new String(Base64.getEncoder().encode(tsp.getEncoded()));
-            return ResponseEntity.ok(TspCreateResponse.builder().xml(tspBase64).build());
+            return ResponseEntity.ok(TspCreateResponse.builder().token(tspBase64).build());
         } catch (Exception e) {
             throw new ClientException(e.getMessage());
         }
